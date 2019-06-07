@@ -3,6 +3,8 @@ from pprint import pprint as pp
 '''
 film = {}
 
+
+
 film['Jmeno'] = ''
 film['Hodnoceni'] = None
 film['Rok'] = None
