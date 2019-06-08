@@ -1,23 +1,18 @@
 from pprint import pprint as pp
 
-'''
 film = {}
-
-
-
 film['Jmeno'] = ''
 film['Hodnoceni'] = None
 film['Rok'] = None
 film['Reziser'] = None
-film['Hraji'] = None
+#film['Hraji'] = None
 
 film['Jmeno'] = input('Zadej jmeno filmu: ')
 film['Hodnoceni'] = 84
 film.update(Hraji=['Robert Downwey Junior', 'Scarlet Johanson'])
 film['Rozpocet'] = 200
+del film['Rozpocet']
 
-
-'''
 film2 = {
 'Jmeno': 'The Godfather',
 'Hodnoceni': 92,
@@ -36,7 +31,8 @@ film3 = {
 
 films = {film2['Jmeno']:film2, film3['Jmeno']:film3}
 
-#films.update(Iron-man=film)
+#films.update(Iron-man = film)  Nejde - nemůže být pomlčka v key - jinak OK
+films[film['Jmeno']] = film
 
 print('Máš tyto filmy: ', films.keys())
 nazev = input('Zadej nazev filmu :')
