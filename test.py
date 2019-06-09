@@ -1,26 +1,15 @@
-PREDMETY = ['Premenovani', 'Astronomie', 'Obrana_proti_cerne_magii',
-            'Bylinkarstvi', 'Lektvary']
+# Database
+my_db = {   'Name': 'John Smith',
+            'Age': 34,
+            'Address': {'Street': 'Main',
+                'Street #': 241,
+                'City': 'Boston',
+                'Country': 'Venezuela'},
 
-tridy = { }
+            'Job': {'Job Title': 'System Admin',
+                    'Level' : 3}
+}
 
-SKUP_1 = ['Adam','Chelsea','Marcus','Oliver','Alex','Sandra','Ann',
-          'Ron', 'Hermiona']
-SKUP_2 = ['Marcus','Alex','Glenn','Samuel', 'Hermiona', 'Clara','Chelsea']
-SKUP_3 = ['Hermiona', 'Adam','Tyler', 'Alex','Clara']
-SKUP_4 = ['Abraham','Marcus', 'Hermiona', 'Alex','Glenn','Clara']
-SKUP_5 = ['Alfred', 'Curt','Oliver','Alex','Tyler', 'Hermiona', 'Ann']
+my_db.update(Manager = 'Samuel, Hunt')
 
-
-
-tridy.update(Premenovani=SKUP_1)
-tridy.update(Astronomie=SKUP_2)
-tridy.update(Obrana_proti_cerne_magii=SKUP_3)
-tridy.update(Bylinkarstvi=SKUP_4)
-tridy.update(Lektvary=SKUP_5)
-
-#print(tridy.keys())
-
-set_premenovani = set(tridy["Premenovani"])
-set_astronomie = set(tridy["Astronomie"])
-set_obrana = set(tridy["Obrana_proti_cerne_magii"])
-set_bylinkarstvi = set(tridy["Bylinkarstvi"])
+print(tuple(my_db.items()))

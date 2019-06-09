@@ -9,9 +9,12 @@ film['Reziser'] = None
 
 film['Jmeno'] = input('Zadej jmeno filmu: ')
 film['Hodnoceni'] = 84
-film.update(Hraji=['Robert Downwey Junior', 'Scarlet Johanson'])
+#film.update(Hraji=['Robert Downwey Junior', 'Scarlet Johanson'])
+film.update({'Hraji':['Robert Downwey Junior', 'Scarlet Johanson']})
 film['Rozpocet'] = 200
 del film['Rozpocet']
+#film.pop('Rozpocet')
+#film.popitem()
 
 film2 = {
 'Jmeno': 'The Godfather',
@@ -31,9 +34,14 @@ film3 = {
 
 films = {film2['Jmeno']:film2, film3['Jmeno']:film3}
 
-#films.update(Iron-man = film)  Nejde - nemůže být pomlčka v key - jinak OK
 films[film['Jmeno']] = film
+#films.update(Iron-man = film)  Nejde - nemůže být pomlčka v key - jinak OK
+
 
 print('Máš tyto filmy: ', films.keys())
 nazev = input('Zadej nazev filmu :')
 print(films[nazev]['Hraji'])
+
+films.clear()
+print('The database has been erased...')
+print(films)
