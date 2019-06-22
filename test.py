@@ -31,10 +31,22 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-t = TEXTS[0]
+t = TEXTS[1]
+text = t.split()
 
+textWithoutDashes = []
+
+for word in text:
+    textWithoutDashes.append(word.replace('-', ''))
+
+print(textWithoutDashes)
+
+
+
+
+"""
 our_set = set()
-for word in TEXTS[0].split():
+for word in t.split():
     if not word.isalnum():
         our_set.add(word[-1])
 dirty_chars = "".join(our_set)
@@ -44,7 +56,11 @@ cleanTextList = list()
 for word in t.split():
     cleanTextList.append(word.strip(dirty_chars))
 
-print(cleanTextList)
+print(dirty_chars)
+
+
+
+
 
 counter = 0
 for word in cleanTextList:
@@ -58,3 +74,4 @@ for word in cleanTextList:
 
 
 print(counter)
+"""

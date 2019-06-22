@@ -41,42 +41,52 @@ if registered.get(enteredU, 0) != enteredP:
 else:
     textChoice = input('Please choose text number (1-3): ')
     chosenText = TEXTS[int(textChoice) - 1]
+    print()
 
-    our_set = set()
+    # Put dashes away
+    textListWithoutDashes = []
     for word in chosenText.split():
+        textListWithoutDashes.append(word.replace('-', 'x'))
+
+    # Put dirty chars away
+    our_set = set()
+    for word in textListWithoutDashes:
         if not word.isalnum():
             our_set.add(word[-1])
     dirty_chars = "".join(our_set)
-
     cleanTextList = list()
-
-    for word in chosenText.split():
+    for word in textListWithoutDashes:
         cleanTextList.append(word.strip(dirty_chars))
 
-    print('Number of words is:', len(cleanTextList))
-
-    counter = 0
+    print('Number of words:', len(cleanTextList))
+    counterCap = 0
+    counterUpper = 0
+    counterLower = 0
+    counterNum = 0
+    sumOfNum = 0.0
+    wordLengthArray = [0] * 15
     for word in cleanTextList:
         if word[0].isupper():
-            counter += 1
-    print('Number of words starting with capital letter is:', counter)
-
-    counter = 0
-    for word in cleanTextList:
-        flag = True
-        for char in list(word):
-            if not char.isupper():
-                flag = False
-        if flag:
-            counter += 1
-    print('Number of uppercase words is:', counter)
-
-    counter = 0
-    for word in cleanTextList:
-        flag = True
-        for char in list(word):
-            if (not char.islower()) and char != '-':
-                flag = False
-        if flag:
-            counter += 1
-    print('Number of lowercase words is:', counter)
+            counterCap += 1
+        if word.isalpha():
+            if word.isupper():
+                counterUpper += 1
+            elif word.islower():
+                counterLower += 1
+        elif word.isnumeric():
+            counterNum += 1
+            # sum of all the numeric "words"
+            sumOfNum += int(word)
+        # the frequencies of word lengths
+        wordLengthArray[len(word)-1] += 1
+    print('Number of words starting with capital letter:', counterCap)
+    print('Number of uppercase words:', counterUpper)
+    print('Number of lowercase words:', counterLower)
+    print('Number of numeric words:', counterNum)
+    # Number of words with the same length
+    print()
+    print('Depicting the frequencies of word lengths in the text:')
+    for index, length in enumerate(wordLengthArray):
+        print(index + 1, '*' * length, length)
+    print()
+    print('The sum of all the numeric "words":', sumOfNum)
