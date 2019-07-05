@@ -1,5 +1,4 @@
-import random
+employee = {'f_name':'John', '_name':'Smith','age': 23, 'job':'plumber'}
 
-kostka = random.randint(1,6)
-
-print(kostka)
+for k, v  in employee.items():
+    print(k, v)
