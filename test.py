@@ -1,2 +1,2 @@
-s = "sdfsadfadsf"
-print(list(s))
+
+print(chr(97))
