@@ -1,6 +1,13 @@
-my_dict = dict(b = 1)
+d = {'1': 4, '8': 1, '321': 1, '4': 1, '3': 2, '6': 2, '21': 1, '32': 1, '5': 2, '2': 3, '9': 1}
 
-if not "a" in my_dict:
-    my_dict.update({"a":0})
 
-print(my_dict)
+max = 0
+
+while d:
+    for key in d:
+        if d[key] > max:
+            max = d[key]
+            keyMax = key
+    del d[keyMax]
+
+print(d)
