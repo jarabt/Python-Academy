@@ -1,8 +1,3 @@
-<<<<<<< HEAD
->>> sequence = [32,43,54,54,76,21,62,83,52,58]
->>> my_sum(sequence)
-535
-=======
 import random
 
 dataset= [['Name','Item','Amount','Unit_Price']]
@@ -20,16 +15,20 @@ products = [('DROXIA', 33.86),('WRINKLESS PLUS',23.55),
             ('Quinapril', 34.89), ('Doxycycline Hyclate', 23.43),
             ('Metolazone', 43.06), ('PAXIL', 14.78)]
 
+def generate_dataset(num_rows):
 
-row = [None]*5
+    for i in range(num_rows):
 
-for i in range(5):
-    row[0] = random.choice(customers)
-    row[1], row[3]= random.choice(products)
-    row[2] = random.randint(1,100)
-    row[4] = row[2] * row[3]
-    dataset.append(row)
+        name = random.choice(customers)
+        item, price= random.choice(products)
+        amount = random.randint(1,100)
+        total_price = amount * price
+
+        row = [name,item, amount, price, total_price]
+        dataset.append(row)
+
+    return dataset
 
 
-print(dataset)
->>>>>>> 2f08ea1fa793d367e766a611eceb2b9e53bbd0bc
+test = generate_dataset(5)
+print(test)
